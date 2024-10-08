@@ -1,0 +1,80 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    width: 100%;
+    max-width: 320px; /* Limita el ancho a 320px */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna para móviles */
+    gap: 15px; /* Espacio entre las tarjetas */
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Media queries para pantallas más grandes */
+@media (min-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas para pantallas más grandes */
+    }
+}
+
+@media (min-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas para pantallas más grandes */
+    }
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+}
