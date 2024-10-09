@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+    box-sizing: border-box;
 }
 
 body {
@@ -36,16 +36,55 @@ nav a {
     text-decoration: none;
 }
 
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 280px; /* Cambiado a 280px para vista móvil */
+    max-width: 280px; /* Limita el ancho a 280px */
+    margin: auto; /* Centra el carrusel */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: calc(100% * 6); /* Asegura que el contenedor tenga suficiente ancho */
+}
+
+.carousel img {
+    width: 280px; /* Ancho fijo para las imágenes en vista móvil */
+    height: auto; /* Mantiene la proporción */
+    flex: 0 0 auto; /* Asegura que cada imagen ocupe su espacio */
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
 main {
     padding: 20px;
     width: 100%;
-    max-width: 320px; /* Limita el ancho a 320px */
+    max-width: 280px; /* Limita el ancho a 280px */
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr; /* Una columna para móviles */
-    gap: 15px; /* Espacio entre las tarjetas */
+    grid-template-columns: 1fr;
+    gap: 15px;
 }
 
 .card {
@@ -62,14 +101,18 @@ h2 {
 
 /* Media queries para pantallas más grandes */
 @media (min-width: 600px) {
+    .carousel {
+        width: 320px; /* Aumenta el ancho para pantallas más grandes */
+        max-width: 320px;
+    }
     .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas para pantallas más grandes */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width: 900px) {
     .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* Tres columnas para pantallas más grandes */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
